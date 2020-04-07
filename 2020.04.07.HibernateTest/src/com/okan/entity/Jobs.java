@@ -8,7 +8,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "JOBS")
 public class Jobs {
-
+ 
 	@Id
 	@Column(name = "JOB_ID")
 	private String jobId;
