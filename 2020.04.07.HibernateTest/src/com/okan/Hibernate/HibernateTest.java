@@ -4,7 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import com.okan.entity.Departments;
+import com.okan.entity.Department;
 import com.okan.entity.Jobs;
 
 public class HibernateTest {
