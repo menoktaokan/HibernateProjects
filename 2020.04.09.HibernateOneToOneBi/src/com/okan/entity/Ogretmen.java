@@ -23,7 +23,7 @@ public class Ogretmen {
 	private Integer id;
 
 	// OGRETMEN_DETAY NUMBER
-	@OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "ogretmen_detay_id")
 	private OgretmenDetay ogretmenDetay;
 	/*
@@ -35,6 +35,7 @@ public class Ogretmen {
 	 * DEPARTMENT_ID;
 	 */
 
+	
 	@Column(name = "ADI")
 	private String ad;
 
@@ -86,4 +87,13 @@ public class Ogretmen {
 		this.eposta = eposta;
 	}
 
+
+
+	@Override
+	public String toString() {
+		return "Ogretmen [id=" + id  + ", ad=" + ad + ", soyad=" + soyad
+				+ ", eposta=" + eposta + "]";
+	}
+
+	
 }

@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -27,6 +28,9 @@ public class OgretmenDetay {
 	 * @GeneratedValue(strategy = GenerationType.IDENTITY) private int
 	 * DEPARTMENT_ID;
 	 */
+
+	@OneToOne(mappedBy = "ogretmenDetay")
+	private Ogretmen ogretmen;
 
 	@Column(name = "UZMANLIK")
 	private String uzmanlik;
@@ -80,6 +84,14 @@ public class OgretmenDetay {
 		this.fbSayfasi = fbSayfasi;
 	}
 
+	public Ogretmen getOgretmen() {
+		return ogretmen;
+	}
+
+	public void setOgretmen(Ogretmen ogretmen) {
+		this.ogretmen = ogretmen;
+	}
+
 	public OgretmenDetay() {
 	}
 
@@ -88,6 +100,12 @@ public class OgretmenDetay {
 		this.hobiler = hobiler;
 		this.webSite = webSite;
 		this.fbSayfasi = fbSayfasi;
+	}
+
+	@Override
+	public String toString() {
+		return "OgretmenDetay [id=" + id +", uzmanlik=" + uzmanlik + ", hobiler=" + hobiler
+				+ ", webSite=" + webSite + ", fbSayfasi=" + fbSayfasi + "]";
 	}
 
 }

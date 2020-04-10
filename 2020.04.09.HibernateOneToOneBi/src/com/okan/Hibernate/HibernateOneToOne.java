@@ -18,15 +18,21 @@ public class HibernateOneToOne {
 		// create session
 		Session session = sessionFactory.getCurrentSession();
 		
-		OgretmenDetay ogrDty = new OgretmenDetay("java", "sinema", "yok8.com", "/menoktaokan");
-
-		Ogretmen ogr = new Ogretmen(ogrDty, "Okan", "YILMAZ", "okan8@yilmaz.com");
-
 		session.beginTransaction();
-		session.save(ogr);
+		OgretmenDetay ogrDty = session.get(OgretmenDetay.class, 4);
+		
+		System.out.println(ogrDty);
+		System.out.println(ogrDty.getOgretmen());
+		
+		session.delete(ogrDty);
+		session.getTransaction().commit();
+		session.close();
+		/*
+		session.beginTransaction();
+		session.save(ogrDty);
 
 		session.getTransaction().commit();
 		session.close();
- 
+ 	*/
 	}
 }
