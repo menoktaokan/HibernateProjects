@@ -13,21 +13,11 @@ import javax.persistence.Table;
 @Table(name = "OGRETMEN_DETAY")
 public class OgretmenDetay {
 
-	// Oracle yazımı
 	@Id
 	@Column(name = "ID")
 	@SequenceGenerator(name = "ogr_detay_seq", sequenceName = "OGR_DETAY_SEQ", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ogr_detay_seq")
 	private Integer id;
-
-	/*
-	 * @Id
-	 * 
-	 * @Column
-	 * 
-	 * @GeneratedValue(strategy = GenerationType.IDENTITY) private int
-	 * DEPARTMENT_ID;
-	 */
 
 	@OneToOne(mappedBy = "ogretmenDetay")
 	private Ogretmen ogretmen;

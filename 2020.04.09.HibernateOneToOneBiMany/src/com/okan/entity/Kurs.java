@@ -64,12 +64,10 @@ public class Kurs {
 	}
 
 	public Kurs() {
-		super();
 	}
 
 	
 	public Kurs(String ad, Integer saat, Ogretmen ogretmen) {
-		super();
 		this.ad = ad;
 		this.saat = saat;
 		this.ogretmen = ogretmen;

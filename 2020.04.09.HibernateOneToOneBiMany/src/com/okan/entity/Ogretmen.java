@@ -19,25 +19,15 @@ import javax.persistence.Table;
 @Table(name = "OGRETMEN")
 public class Ogretmen {
 
-	// Oracle yazımı
 	@Id
 	@Column(name = "ID")
 	@SequenceGenerator(name = "ogr_seq", sequenceName = "OGR_SEQ", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ogr_seq")
 	private Integer id;
 
-	// OGRETMEN_DETAY NUMBER
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "ogretmen_detay_id")
 	private OgretmenDetay ogretmenDetay;
-	/*
-	 * @Id
-	 * 
-	 * @Column
-	 * 
-	 * @GeneratedValue(strategy = GenerationType.IDENTITY) private int
-	 * DEPARTMENT_ID;
-	 */
 
 	@Column(name = "ADI")
 	private String ad;
