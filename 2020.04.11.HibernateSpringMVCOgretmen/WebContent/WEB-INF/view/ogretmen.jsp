@@ -14,11 +14,12 @@
 
 
 	<f:form action="ogretmenGunelle" method="GET" modelAttribute="ogr">
+	<f:hidden path="id"/>
 		<table>
 
 			<tr>
 				<td>Öğretmen ID:</td>
-				<td><f:input path="id" /> <f:errors path="id" cssClass="hata" /></td>
+				<td><f:input path="id"  disabled="true"/> <f:errors path="id" cssClass="hata" /></td>
 			</tr>
 			<tr>
 				<td>Öğretmen Ad:</td>
@@ -46,12 +47,12 @@
 	<br>
 
 
-	<f:form action="ogretmenDtyGunelle" method="GET"
-		modelAttribute="ogrDty">
+	<f:form action="ogretmenDtyGunelle" modelAttribute="ogrDty">
+	<f:hidden path="id"/>
 		<table>
 			<tr>
 				<td>Öğretmen Detay ID:</td>
-				<td> <f:input path="id" /> <f:errors
+				<td> <f:input path="id"/> <f:errors
 						path="id" cssClass="hata" /></td>
 			</tr>
 			<tr>

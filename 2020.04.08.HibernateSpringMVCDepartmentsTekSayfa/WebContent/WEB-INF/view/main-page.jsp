@@ -54,8 +54,7 @@ color:red;
 
 	</form>
 
-<f:form action="update" modelAttribute="dept"
-		class="form2">
+<f:form action="update" modelAttribute="dept" class="form2">
 		<f:hidden path="id"/>
 		<table width="350" cellpadding="5">
 			<tr>

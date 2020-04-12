@@ -63,14 +63,14 @@ public class OgretmenController {
 
 	@RequestMapping("/ogretmenGunelle")
 	public String ogretmenGunelle(Model m, @Valid @ModelAttribute("ogr") Ogretmen ogr, BindingResult br) {
-		SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml") // hibernate.cfg.xml olarak
-																							// adlandırılırsak kodda
-																							// belirtmeye gerek kalmaz
+		SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml")
 				.addAnnotatedClass(Ogretmen.class).addAnnotatedClass(OgretmenDetay.class).addAnnotatedClass(Kurs.class)
 				.buildSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		session.beginTransaction();
-		session.saveOrUpdate(ogr);
+		if (ogr.getAd() != null && ogr.getSoyad() != null && ogr.getEposta() != null)
+			session.createQuery("update Ogretmen set ad='" + ogr.getAd() + "', soyad='" + ogr.getSoyad() + "', eposta='"
+					+ ogr.getEposta() + "' where id=" + ogr.getId()).executeUpdate();
 		m.addAttribute("ogr", ogr);
 
 		session.getTransaction().commit();
@@ -81,9 +81,7 @@ public class OgretmenController {
 
 	@RequestMapping("/ogretmenDtyGunelle")
 	public String ogretmenDtyGunelle(Model m, @Valid @ModelAttribute("ogrDty") OgretmenDetay ogrDty, BindingResult br) {
-		SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml") // hibernate.cfg.xml olarak
-																							// adlandırılırsak kodda
-																							// belirtmeye gerek kalmaz
+		SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml")
 				.addAnnotatedClass(Ogretmen.class).addAnnotatedClass(OgretmenDetay.class).addAnnotatedClass(Kurs.class)
 				.buildSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
@@ -100,9 +98,7 @@ public class OgretmenController {
 
 	@RequestMapping("/kursAra")
 	public String kursAra(Model m, @Valid @ModelAttribute("kurs") Kurs kurs, BindingResult br) {
-		SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml") // hibernate.cfg.xml olarak
-																							// adlandırılırsak kodda
-																							// belirtmeye gerek kalmaz
+		SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml")
 				.addAnnotatedClass(Ogretmen.class).addAnnotatedClass(OgretmenDetay.class).addAnnotatedClass(Kurs.class)
 				.buildSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
@@ -120,15 +116,16 @@ public class OgretmenController {
 
 	@RequestMapping("/kursGuncelle")
 	public String kursGuncelle(Model m, @Valid @ModelAttribute("ogrDty") Kurs kurs, BindingResult br) {
-		SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml") // hibernate.cfg.xml olarak
-																							// adlandırılırsak kodda
-																							// belirtmeye gerek kalmaz
+		SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml")
 				.addAnnotatedClass(Ogretmen.class).addAnnotatedClass(OgretmenDetay.class).addAnnotatedClass(Kurs.class)
 				.buildSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		session.beginTransaction();
+		if (kurs.getAd() != null && kurs.getSaat() != null)
+			session.createQuery(
+					"update Kurs set ad='" + kurs.getAd() + "', saat=" + kurs.getSaat() + " where id=" + kurs.getId())
+					.executeUpdate();
 
-		session.save(kurs);
 		m.addAttribute("kurs", kurs);
 
 		session.getTransaction().commit();

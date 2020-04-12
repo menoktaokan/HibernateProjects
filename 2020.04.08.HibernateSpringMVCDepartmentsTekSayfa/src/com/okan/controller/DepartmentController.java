@@ -66,7 +66,7 @@ public class DepartmentController {
 					+ ", locationId=" + dept.getLocationId() + " where id=" + dept.getId()).executeUpdate();
 
 		session.getTransaction().commit();
-
+		session.close();
 		model.addAttribute("dept", dept);
 
 		if (br.hasErrors())

@@ -13,11 +13,13 @@
 	<h1>KURS</h1>
 
 	<f:form action="kursGuncelle" method="GET" modelAttribute="kurs">
+	<f:hidden path="id"/>
+	<f:hidden path="ogretmen.ad"/>
 		<table>
 
 			<tr>
 				<td>Kurs ID:</td>
-				<td><f:input path="id" /> <f:errors path="id" cssClass="hata" /></td>
+				<td><f:input path="id" disabled="true"/> <f:errors path="id" cssClass="hata" /></td>
 			</tr>
 			<tr>
 				<td>Adı:</td>
@@ -31,7 +33,7 @@
 			</tr>
 			<tr>
 				<td>Öğretmeni:</td>
-				<td><f:input path="ogretmen.ad" /> <f:errors path="" cssClass="hata" /></td>
+				<td><f:input path="ogretmen.ad" disabled="true" /> <f:errors path="" cssClass="hata" /></td>
 			</tr>
 			<tr>
 				<td><input type="submit" value="Kurs Güncelle"></td>
