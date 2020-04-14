@@ -55,8 +55,8 @@ public class DepartmentController {
 
 	@RequestMapping("/update")
 	public String sayfa3(Model model, @Valid @ModelAttribute("dept") Department dept, BindingResult br) {
-		System.out.println(br);
-		System.out.println(dept.toString());
+//		System.out.println(br);
+//		System.out.println(dept.toString());
 		Session session = sessionFactory.getCurrentSession();
 		session.beginTransaction();
 		if (dept.getId() != null && dept.getName() != null && dept.getManagerId() != null

@@ -22,7 +22,7 @@ public class Department {
 	@Min(value = 0, message = "0'dan küçük değer girilemez")
 	private Integer id;
 
-	@NotEmpty(message = "İsim boş olamaz!")
+//	@NotEmpty(message = "İsim boş olamaz!")
 	@Column(name = "DEPARTMENT_NAME")
 	private String name;
 	

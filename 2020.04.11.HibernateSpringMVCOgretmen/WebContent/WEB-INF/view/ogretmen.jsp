@@ -13,7 +13,7 @@
 	<h1>ÖĞRETMEN</h1>
 
 
-	<f:form action="ogretmenGunelle" method="GET" modelAttribute="ogr">
+	<f:form action="ogretmenGunelle" modelAttribute="ogr">
 	<f:hidden path="id"/>
 		<table>
 
@@ -46,7 +46,7 @@
 	<br>
 	<br>
 
-
+<!-- 
 	<f:form action="ogretmenDtyGunelle" modelAttribute="ogrDty">
 	<f:hidden path="id"/>
 		<table>
@@ -83,7 +83,7 @@
 	</f:form>
 	<br>
 	<br>
-
+ -->
 	<f:form action="anasayfa">
 		<input type="submit" value="Ana Sayfa">
 	</f:form>

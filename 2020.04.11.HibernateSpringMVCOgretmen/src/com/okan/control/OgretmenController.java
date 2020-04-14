@@ -19,6 +19,7 @@ import com.okan.entity.OgretmenDetay;
 
 @Controller
 public class OgretmenController {
+	
 
 	@RequestMapping("/")
 	public String anasayfa(Model m) {
@@ -34,48 +35,40 @@ public class OgretmenController {
 
 	@RequestMapping("/ogretmenAra")
 	public String ogretmenAra(Model m, @Valid @ModelAttribute("ogr") Ogretmen ogr, BindingResult br) {
-		SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml") // hibernate.cfg.xml olarak
-																							// adlandırılırsak kodda
-																							// belirtmeye gerek kalmaz
+		SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml")
 				.addAnnotatedClass(Ogretmen.class).addAnnotatedClass(OgretmenDetay.class).addAnnotatedClass(Kurs.class)
 				.buildSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		session.beginTransaction();
 
 		ogr = session.get(Ogretmen.class, ogr.getId());
+
 		List<OgretmenDetay> od = session.createQuery("from OgretmenDetay where id= " + ogr.getOgretmenDetayId()).list();
-		ogrDtyYazdir(od);
 		OgretmenDetay oDty = od.get(0);
 		m.addAttribute("ogrDty", oDty);
 		m.addAttribute("ogr", ogr);
 
 		session.getTransaction().commit();
 		session.close();
-		System.out.println(ogr.toString());
 		return "ogretmen";
 	}
 
-	private void ogrDtyYazdir(List<OgretmenDetay> od) {
-		for (OgretmenDetay odty : od) {
-			System.out.println(odty);
-		}
-	}
-
 	@RequestMapping("/ogretmenGunelle")
-	public String ogretmenGunelle(Model m, @Valid @ModelAttribute("ogr") Ogretmen ogr, BindingResult br) {
-		SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml")
-				.addAnnotatedClass(Ogretmen.class).addAnnotatedClass(OgretmenDetay.class).addAnnotatedClass(Kurs.class)
-				.buildSessionFactory();
+	public String updateOgretmen(Model model, @ModelAttribute("ogr") Ogretmen ogr) {
+		
+		SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Kurs.class)
+				.addAnnotatedClass(Ogretmen.class).addAnnotatedClass(OgretmenDetay.class).buildSessionFactory();
+
 		Session session = sessionFactory.getCurrentSession();
 		session.beginTransaction();
-		if (ogr.getAd() != null && ogr.getSoyad() != null && ogr.getEposta() != null)
-			session.createQuery("update Ogretmen set ad='" + ogr.getAd() + "', soyad='" + ogr.getSoyad() + "', eposta='"
-					+ ogr.getEposta() + "' where id=" + ogr.getId()).executeUpdate();
-		m.addAttribute("ogr", ogr);
-
+		
+		session.createQuery("update Ogretmen set ad ='"+ogr.getAd()+"', soyad ='"+ogr.getSoyad()+"', eposta ='"+ogr.getEposta()+"'  where id ="+ogr.getId()).executeUpdate();
+		
+		
 		session.getTransaction().commit();
 		session.close();
-		System.out.println(ogr.toString());
+		model.addAttribute("ogr",ogr);
+	
 		return "ogretmen";
 	}
 
@@ -86,13 +79,18 @@ public class OgretmenController {
 				.buildSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		session.beginTransaction();
+		
+		session.createQuery("update Ogretmen set uzmanlik='" + ogrDty.getUzmanlik() + "', hobiler='"
+				+ ogrDty.getHobiler() + "', webSite='" + ogrDty.getWebSite() + "', fbSayfasi='" + ogrDty.getFbSayfasi()
+				+ "' where id=" + ogrDty.getId()).executeUpdate();
 
-		session.save(ogrDty);
+		Ogretmen ogr = session.get(Ogretmen.class, ogrDty.getOgretmen().getId());
+
+		m.addAttribute("ogr", ogr);
 		m.addAttribute("ogrDty", ogrDty);
 
 		session.getTransaction().commit();
 		session.close();
-		System.out.println(ogrDty.toString());
 		return "ogretmen";
 	}
 
@@ -115,7 +113,7 @@ public class OgretmenController {
 	}
 
 	@RequestMapping("/kursGuncelle")
-	public String kursGuncelle(Model m, @Valid @ModelAttribute("ogrDty") Kurs kurs, BindingResult br) {
+	public String kursGuncelle(Model m, @Valid @ModelAttribute("kurs") Kurs kurs, BindingResult br) {
 		SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml")
 				.addAnnotatedClass(Ogretmen.class).addAnnotatedClass(OgretmenDetay.class).addAnnotatedClass(Kurs.class)
 				.buildSessionFactory();
