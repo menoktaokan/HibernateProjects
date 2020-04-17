@@ -18,97 +18,477 @@
 		<link>
 			<name>lib/FastInfoset-1.2.15.jar</name>
 			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/hibernate-lib/required/FastInfoset-1.2.15.jar</locationURI>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/FastInfoset-1.2.15.jar</locationURI>
 		</link>
 		<link>
 			<name>lib/antlr-2.7.7.jar</name>
 			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/hibernate-lib/required/antlr-2.7.7.jar</locationURI>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/antlr-2.7.7.jar</locationURI>
 		</link>
 		<link>
 			<name>lib/byte-buddy-1.10.7.jar</name>
 			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/hibernate-lib/required/byte-buddy-1.10.7.jar</locationURI>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/byte-buddy-1.10.7.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/c3p0-0.9.5.3.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/c3p0-0.9.5.3.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/classmate-1.3.4.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/classmate-1.3.4.jar</locationURI>
 		</link>
 		<link>
 			<name>lib/classmate-1.5.1.jar</name>
 			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/hibernate-lib/required/classmate-1.5.1.jar</locationURI>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/classmate-1.5.1.jar</locationURI>
 		</link>
 		<link>
 			<name>lib/dom4j-2.1.1.jar</name>
 			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/hibernate-lib/required/dom4j-2.1.1.jar</locationURI>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/dom4j-2.1.1.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/hibernate-c3p0-5.4.13.Final.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/hibernate-c3p0-5.4.13.Final.jar</locationURI>
 		</link>
 		<link>
 			<name>lib/hibernate-commons-annotations-5.1.0.Final.jar</name>
 			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/hibernate-lib/required/hibernate-commons-annotations-5.1.0.Final.jar</locationURI>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/hibernate-commons-annotations-5.1.0.Final.jar</locationURI>
 		</link>
 		<link>
 			<name>lib/hibernate-core-5.4.13.Final.jar</name>
 			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/hibernate-lib/required/hibernate-core-5.4.13.Final.jar</locationURI>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/hibernate-core-5.4.13.Final.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/hibernate-validator-6.1.2.Final.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/hibernate-validator-6.1.2.Final-dist/hibernate-validator-6.1.2.Final/dist/hibernate-validator-6.1.2.Final.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/hibernate-validator-annotation-processor-6.1.2.Final.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/hibernate-validator-6.1.2.Final-dist/hibernate-validator-6.1.2.Final/dist/hibernate-validator-annotation-processor-6.1.2.Final.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/hibernate-validator-cdi-6.1.2.Final.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/hibernate-validator-6.1.2.Final-dist/hibernate-validator-6.1.2.Final/dist/hibernate-validator-cdi-6.1.2.Final.jar</locationURI>
 		</link>
 		<link>
 			<name>lib/istack-commons-runtime-3.0.7.jar</name>
 			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/hibernate-lib/required/istack-commons-runtime-3.0.7.jar</locationURI>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/istack-commons-runtime-3.0.7.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/jakarta.el-3.0.3.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/jakarta.el-3.0.3.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/jakarta.validation-api-2.0.2.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/jakarta.validation-api-2.0.2.jar</locationURI>
 		</link>
 		<link>
 			<name>lib/jandex-2.1.1.Final.jar</name>
 			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/hibernate-lib/required/jandex-2.1.1.Final.jar</locationURI>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/jandex-2.1.1.Final.jar</locationURI>
 		</link>
 		<link>
 			<name>lib/javassist-3.24.0-GA.jar</name>
 			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/hibernate-lib/required/javassist-3.24.0-GA.jar</locationURI>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/javassist-3.24.0-GA.jar</locationURI>
 		</link>
 		<link>
 			<name>lib/javax.activation-api-1.2.0.jar</name>
 			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/hibernate-lib/required/javax.activation-api-1.2.0.jar</locationURI>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/javax.activation-api-1.2.0.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/javax.faces-2.2.8-35.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/javax.faces-2.2.8-35.jar</locationURI>
 		</link>
 		<link>
 			<name>lib/javax.persistence-api-2.2.jar</name>
 			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/hibernate-lib/required/javax.persistence-api-2.2.jar</locationURI>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/javax.persistence-api-2.2.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/javax.servlet-api-4.0.1.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/javax.servlet-api-4.0.1.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/javax.servlet.jsp.jstl-1.2.1.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/javax.servlet.jsp.jstl-1.2.1.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/javax.servlet.jsp.jstl-api-1.2.1.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/javax.servlet.jsp.jstl-api-1.2.1.jar</locationURI>
 		</link>
 		<link>
 			<name>lib/jaxb-api-2.3.1.jar</name>
 			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/hibernate-lib/required/jaxb-api-2.3.1.jar</locationURI>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/jaxb-api-2.3.1.jar</locationURI>
 		</link>
 		<link>
 			<name>lib/jaxb-runtime-2.3.1.jar</name>
 			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/hibernate-lib/required/jaxb-runtime-2.3.1.jar</locationURI>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/jaxb-runtime-2.3.1.jar</locationURI>
 		</link>
 		<link>
 			<name>lib/jboss-logging-3.3.2.Final.jar</name>
 			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/hibernate-lib/required/jboss-logging-3.3.2.Final.jar</locationURI>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/jboss-logging-3.3.2.Final.jar</locationURI>
 		</link>
 		<link>
 			<name>lib/jboss-transaction-api_1.2_spec-1.1.1.Final.jar</name>
 			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/hibernate-lib/required/jboss-transaction-api_1.2_spec-1.1.1.Final.jar</locationURI>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/jboss-transaction-api_1.2_spec-1.1.1.Final.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/mchange-commons-java-0.2.15.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/mchange-commons-java-0.2.15.jar</locationURI>
 		</link>
 		<link>
 			<name>lib/ojdbc6.jar</name>
 			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/ojdbc6.jar</locationURI>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/ojdbc6.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-aop-5.2.3.RELEASE-javadoc.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-aop-5.2.3.RELEASE-javadoc.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-aop-5.2.3.RELEASE-sources.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-aop-5.2.3.RELEASE-sources.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-aop-5.2.3.RELEASE.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-aop-5.2.3.RELEASE.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-aspects-5.2.3.RELEASE-javadoc.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-aspects-5.2.3.RELEASE-javadoc.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-aspects-5.2.3.RELEASE-sources.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-aspects-5.2.3.RELEASE-sources.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-aspects-5.2.3.RELEASE.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-aspects-5.2.3.RELEASE.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-beans-5.2.3.RELEASE-javadoc.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-beans-5.2.3.RELEASE-javadoc.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-beans-5.2.3.RELEASE-sources.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-beans-5.2.3.RELEASE-sources.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-beans-5.2.3.RELEASE.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-beans-5.2.3.RELEASE.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-context-5.2.3.RELEASE-javadoc.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-context-5.2.3.RELEASE-javadoc.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-context-5.2.3.RELEASE-sources.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-context-5.2.3.RELEASE-sources.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-context-5.2.3.RELEASE.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-context-5.2.3.RELEASE.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-context-indexer-5.2.3.RELEASE-javadoc.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-context-indexer-5.2.3.RELEASE-javadoc.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-context-indexer-5.2.3.RELEASE-sources.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-context-indexer-5.2.3.RELEASE-sources.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-context-indexer-5.2.3.RELEASE.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-context-indexer-5.2.3.RELEASE.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-context-support-5.2.3.RELEASE-javadoc.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-context-support-5.2.3.RELEASE-javadoc.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-context-support-5.2.3.RELEASE-sources.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-context-support-5.2.3.RELEASE-sources.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-context-support-5.2.3.RELEASE.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-context-support-5.2.3.RELEASE.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-core-5.2.3.RELEASE-javadoc.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-core-5.2.3.RELEASE-javadoc.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-core-5.2.3.RELEASE-sources.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-core-5.2.3.RELEASE-sources.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-core-5.2.3.RELEASE.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-core-5.2.3.RELEASE.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-expression-5.2.3.RELEASE-javadoc.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-expression-5.2.3.RELEASE-javadoc.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-expression-5.2.3.RELEASE-sources.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-expression-5.2.3.RELEASE-sources.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-expression-5.2.3.RELEASE.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-expression-5.2.3.RELEASE.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-instrument-5.2.3.RELEASE-javadoc.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-instrument-5.2.3.RELEASE-javadoc.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-instrument-5.2.3.RELEASE-sources.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-instrument-5.2.3.RELEASE-sources.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-instrument-5.2.3.RELEASE.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-instrument-5.2.3.RELEASE.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-jcl-5.2.3.RELEASE-javadoc.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-jcl-5.2.3.RELEASE-javadoc.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-jcl-5.2.3.RELEASE-sources.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-jcl-5.2.3.RELEASE-sources.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-jcl-5.2.3.RELEASE.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-jcl-5.2.3.RELEASE.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-jdbc-5.2.3.RELEASE-javadoc.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-jdbc-5.2.3.RELEASE-javadoc.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-jdbc-5.2.3.RELEASE-sources.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-jdbc-5.2.3.RELEASE-sources.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-jdbc-5.2.3.RELEASE.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-jdbc-5.2.3.RELEASE.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-jms-5.2.3.RELEASE-javadoc.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-jms-5.2.3.RELEASE-javadoc.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-jms-5.2.3.RELEASE-sources.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-jms-5.2.3.RELEASE-sources.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-jms-5.2.3.RELEASE.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-jms-5.2.3.RELEASE.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-messaging-5.2.3.RELEASE-javadoc.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-messaging-5.2.3.RELEASE-javadoc.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-messaging-5.2.3.RELEASE-sources.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-messaging-5.2.3.RELEASE-sources.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-messaging-5.2.3.RELEASE.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-messaging-5.2.3.RELEASE.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-orm-5.2.3.RELEASE-javadoc.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-orm-5.2.3.RELEASE-javadoc.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-orm-5.2.3.RELEASE-sources.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-orm-5.2.3.RELEASE-sources.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-orm-5.2.3.RELEASE.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-orm-5.2.3.RELEASE.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-oxm-5.2.3.RELEASE-javadoc.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-oxm-5.2.3.RELEASE-javadoc.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-oxm-5.2.3.RELEASE-sources.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-oxm-5.2.3.RELEASE-sources.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-oxm-5.2.3.RELEASE.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-oxm-5.2.3.RELEASE.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-test-5.2.3.RELEASE-javadoc.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-test-5.2.3.RELEASE-javadoc.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-test-5.2.3.RELEASE-sources.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-test-5.2.3.RELEASE-sources.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-test-5.2.3.RELEASE.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-test-5.2.3.RELEASE.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-tx-5.2.3.RELEASE-javadoc.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-tx-5.2.3.RELEASE-javadoc.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-tx-5.2.3.RELEASE-sources.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-tx-5.2.3.RELEASE-sources.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-tx-5.2.3.RELEASE.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-tx-5.2.3.RELEASE.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-web-5.2.3.RELEASE-javadoc.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-web-5.2.3.RELEASE-javadoc.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-web-5.2.3.RELEASE-sources.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-web-5.2.3.RELEASE-sources.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-web-5.2.3.RELEASE.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-web-5.2.3.RELEASE.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-webflux-5.2.3.RELEASE-javadoc.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-webflux-5.2.3.RELEASE-javadoc.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-webflux-5.2.3.RELEASE-sources.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-webflux-5.2.3.RELEASE-sources.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-webflux-5.2.3.RELEASE.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-webflux-5.2.3.RELEASE.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-webmvc-5.2.3.RELEASE-javadoc.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-webmvc-5.2.3.RELEASE-javadoc.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-webmvc-5.2.3.RELEASE-sources.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-webmvc-5.2.3.RELEASE-sources.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-webmvc-5.2.3.RELEASE.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-webmvc-5.2.3.RELEASE.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-websocket-5.2.3.RELEASE-javadoc.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-websocket-5.2.3.RELEASE-javadoc.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-websocket-5.2.3.RELEASE-sources.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-websocket-5.2.3.RELEASE-sources.jar</locationURI>
+		</link>
+		<link>
+			<name>lib/spring-websocket-5.2.3.RELEASE.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/spring-websocket-5.2.3.RELEASE.jar</locationURI>
 		</link>
 		<link>
 			<name>lib/stax-ex-1.8.jar</name>
 			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/hibernate-lib/required/stax-ex-1.8.jar</locationURI>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/stax-ex-1.8.jar</locationURI>
 		</link>
 		<link>
 			<name>lib/txw2-2.3.1.jar</name>
 			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/hibernate-lib/required/txw2-2.3.1.jar</locationURI>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/txw2-2.3.1.jar</locationURI>
 		</link>
 	</linkedResources>
 	<variableList>
