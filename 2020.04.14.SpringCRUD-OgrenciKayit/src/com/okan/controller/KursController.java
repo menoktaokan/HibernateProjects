@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.okan.dao.KursDAO;
 import com.okan.domain.Kurs;
+import com.okan.service.KullaniciServisi;
 import com.okan.service.KursServisi;
 
 @Controller
@@ -22,21 +23,25 @@ public class KursController {
 	@Autowired
 	KursServisi kursServisi;
 	
+	@Autowired
+	KullaniciServisi kullaniciServisi;
+	
 	@GetMapping("/list")
 	public String kursListele(Model model) {
 		
 		List<Kurs> kurslar=kursServisi.getKurslar();
 		model.addAttribute("kurs", kurslar);
-		
+		if(!kullaniciServisi.kullaniciVarMı())
+			return "redirect:/";
 		return "kurs-liste";
 	}
 	
 	@GetMapping("/kurs-ekle")
 	public String kursEkle(Model model) {
-		
 		Kurs kurs = new Kurs();
 		model.addAttribute("kurs", kurs);		
-		
+		if(!kullaniciServisi.kullaniciVarMı())
+			return "redirect:/";
 		return "kurs-form";
 	}
 	
@@ -44,7 +49,8 @@ public class KursController {
 	public String kursKaydet(@ModelAttribute("kurs") Kurs kurs) {
 		
 		kursServisi.saveKurs(kurs);	
-				
+		if(!kullaniciServisi.kullaniciVarMı())
+			return "redirect:/";
 		return "redirect:/kurs/list";
 	}
 
@@ -54,22 +60,26 @@ public class KursController {
 		Kurs kurs = kursServisi.getKurs(kursId);
 		
 		model.addAttribute("kurs", kurs);		
-		
+		if(!kullaniciServisi.kullaniciVarMı())
+			return "redirect:/";
 		return "kurs-form";
 	}
 	
 	@GetMapping("/kurs-sil")
 	public String kursSil(@RequestParam("ogrenciId") int kursId) {
 		
-		Kurs kurs = kursServisi.getKurs(kursId);
+//		Kurs kurs = kursServisi.getKurs(kursId);
 			
 		kursServisi.deleteKurs(kursId);
+		if(!kullaniciServisi.kullaniciVarMı())
+			return "redirect:/";
 		return "redirect:/kurs/list";
 	}
 	
 	@RequestMapping("/index")
 	public String anaSayfa() {
-		
+		if(!kullaniciServisi.kullaniciVarMı())
+			return "redirect:/";
 		return "redirect:../index";
 	}
 }

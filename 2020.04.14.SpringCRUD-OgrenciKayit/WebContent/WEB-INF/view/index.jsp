@@ -15,6 +15,9 @@
 <br><br>
 <button onclick="window.location.href='kurs/list'" class="button">Kursları Listele</button>
 <br>
+<br><br>
+<button onclick="window.location.href='employee/list'" class="button">Employee List</button>
+<br>
 </center>
 </body>
 </html>

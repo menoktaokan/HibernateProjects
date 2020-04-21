@@ -23,6 +23,8 @@ public class Kurs {
 
 	@Column(name = "SAATI")
 	private Integer saat;
+	
+	
 
 	public Integer getId() {
 		return id;
@@ -57,6 +59,5 @@ public class Kurs {
 	public Kurs() {
 		super();
 	}
-	
-	
+
 }

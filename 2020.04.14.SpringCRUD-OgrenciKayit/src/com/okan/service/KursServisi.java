@@ -13,5 +13,6 @@ public interface KursServisi {
 	public Kurs getKurs(int kursId);
 
 	public void deleteKurs(int kursId);
+	
 
 }

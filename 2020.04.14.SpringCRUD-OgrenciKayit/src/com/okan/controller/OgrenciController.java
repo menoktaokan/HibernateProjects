@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.okan.domain.Ogrenci;
+import com.okan.service.KullaniciServisi;
 import com.okan.service.OgrenciServisi;
 
 @Controller
@@ -20,6 +21,9 @@ public class OgrenciController {
 	
 	@Autowired
 	OgrenciServisi ogrenciServisi;
+	
+	@Autowired
+	KullaniciServisi kullaniciServisi;
 
 //	@RequestMapping(path = "/list", method = RequestMethod.GET)
 	@GetMapping("/list") //sayfa geçişleri için
@@ -28,6 +32,8 @@ public class OgrenciController {
 		List<Ogrenci>ogrList= ogrenciServisi.getOgrenciler();
 		
 		model.addAttribute("ogrenciler", ogrList);
+		if(!kullaniciServisi.kullaniciVarMı())
+			return "redirect:/";
 		return "ogrenci-list";
 	}
 	
@@ -37,13 +43,16 @@ public class OgrenciController {
 		Ogrenci ogr = new Ogrenci();
 		
 		model.addAttribute("ogrenci", ogr);
+		if(!kullaniciServisi.kullaniciVarMı())
+			return "redirect:/";
 		return "ogrenci-form";
 	}
 	
 	@PostMapping("/ogrenci-kaydet")
 	public String ogrenciKaydet(@ModelAttribute("ogrenci") Ogrenci ogr) {
 		ogrenciServisi.saveOgrenci(ogr);
-		
+		if(!kullaniciServisi.kullaniciVarMı())
+			return "redirect:/";
 		return "redirect:/ogrenci/list";
 	}
 	
@@ -52,6 +61,8 @@ public class OgrenciController {
 		
 		Ogrenci ogr = ogrenciServisi.getOgrenci(ogrId);
 		model.addAttribute("ogrenci", ogr);
+		if(!kullaniciServisi.kullaniciVarMı())
+			return "redirect:/";
 		return "ogrenci-form";
 	}
 	
@@ -59,12 +70,15 @@ public class OgrenciController {
 	public String ogrenciSil(@RequestParam("ogrenciId") int ogrId) {
 		
 		ogrenciServisi.deleteOgrenci(ogrId);
+		if(!kullaniciServisi.kullaniciVarMı())
+			return "redirect:/";;
 		return "redirect:/ogrenci/list";
 	}
 	
 	@RequestMapping("/index")
 	public String anaSayfa() {
-		
+		if(!kullaniciServisi.kullaniciVarMı())
+			return "redirect:/";
 		return "redirect:../index";
 	}
 }
