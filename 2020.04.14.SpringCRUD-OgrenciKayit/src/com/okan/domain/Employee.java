@@ -4,6 +4,7 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -11,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 
 
 @Entity
@@ -42,6 +45,8 @@ public class Employee {
 	@JoinColumn(name = "JOB_ID")
 	private Jobs job;
 	
+	@Max(value = 9999999, message = "Çok yüksek")
+	@Min(value = 0, message = "Eksi olamaz")
 	@Column(name = "SALARY")
 	private Integer salary;
 	
@@ -52,6 +57,18 @@ public class Employee {
 	@ManyToOne
 	@JoinColumn(name = "DEPARTMENT_ID")
 	private Departments department;
+	
+	@Column(name = "STATUS")
+	private Integer status;
+
+	
+	public Integer getStatus() {
+		return status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
 
 	public Integer getId() {
 		return id;
@@ -148,14 +165,9 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", lastname=" + lastname + ", email=" + email
-				+ ", phoneNumber=" + phoneNumber + ", hireDate=" + hireDate + ", job=" + job + ", salary=" + salary
-				+ ", manager=" + manager + ", department=" + department + "]";
+		return name;
 	}
 
+	
 
-
-	
-	
-	
 }

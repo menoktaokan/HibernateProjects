@@ -4,21 +4,28 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.ApplicationScope;
+import org.springframework.web.context.annotation.RequestScope;
 import org.springframework.web.context.annotation.SessionScope;
 
-@SessionScope
 @Component
+@SessionScope
 @Entity
 @Table(name = "LOGIN_DB")
 public class Kullanici {
 
 	@Id
 	@Column(name = "USER_NAME")
+	@NotEmpty(message = "Boş geçilemez gardaş")
 	private String kullaniciAdi;
 
 	@Column(name = "PASSWORD")
+	@NotEmpty(message = "Boş geçilemez gardaş")
 	private String sifre;
 
 	@Column(name = "NAME")
@@ -29,6 +36,18 @@ public class Kullanici {
 
 	@Column(name = "ROLE")
 	private String rol;
+	
+	@Column(name = "DURUM")
+	private Integer durum;
+
+	
+	public Integer getDurum() {
+		return durum;
+	}
+
+	public void setDurum(Integer durum) {
+		this.durum = durum;
+	}
 
 	public String getKullaniciAdi() {
 		return kullaniciAdi;
@@ -79,6 +98,28 @@ public class Kullanici {
 	}
 
 	public Kullanici() {
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Kullanici other = (Kullanici) obj;
+		if (kullaniciAdi == null) {
+			if (other.kullaniciAdi != null)
+				return false;
+		} else if (!kullaniciAdi.equals(other.kullaniciAdi))
+			return false;
+		if (sifre == null) {
+			if (other.sifre != null)
+				return false;
+		} else if (!sifre.equals(other.sifre))
+			return false;
+		return true;
 	}
 
 }

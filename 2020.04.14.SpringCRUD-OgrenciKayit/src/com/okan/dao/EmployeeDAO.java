@@ -16,5 +16,11 @@ public interface EmployeeDAO {
 
 	public Employee getEmployee(int empId);
 
+	public void saveEmployee(Employee employee);
+
+	public void deleteEmployee(int empId);
+
+	public Jobs getJob(String jobId);
+
 
 }

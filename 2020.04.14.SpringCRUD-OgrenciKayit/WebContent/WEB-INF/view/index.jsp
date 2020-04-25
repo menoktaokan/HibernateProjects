@@ -7,17 +7,28 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Index</title>
 <link type="text/css" rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/style.css">
+	href="${pageContext.request.contextPath}/resources/css/index.css">
 </head>
 <body>
-<center>
-<button onclick="window.location.href='ogrenci/list'" class="button">Öğrencileri Listele</button>
-<br><br>
-<button onclick="window.location.href='kurs/list'" class="button">Kursları Listele</button>
-<br>
-<br><br>
-<button onclick="window.location.href='employee/list'" class="button">Employee List</button>
-<br>
-</center>
+
+  <div class="container">
+
+<div class="wrap">	
+    <button onclick="window.location.href='ogrenci/list'"  class="clicker">Öğrencileri Listele</button>
+    <div class="circle angled"></div>
+  </div>
+
+
+  <div class="wrap">	
+    <button onclick="window.location.href='kurs/list'"  class="clicker fast">Kursları Listele</button>
+    <div class="circle angled second"></div>
+  </div>
+
+
+<div class="wrap">	
+    <button onclick="window.location.href='employee/list'"  class="clicker faster">Employee List</button>
+    <div class="circle angled third"></div>
+  </div>
+</div>
 </body>
 </html>

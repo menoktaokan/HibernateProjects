@@ -25,7 +25,7 @@ public class OgrenciDAOImpl implements OgrenciDAO {
 		
 //		session.beginTransaction();
 		
-		Query <Ogrenci> query = session.createQuery("from Ogrenci", Ogrenci.class);
+		Query <Ogrenci> query = session.createQuery("from Ogrenci where durum=1", Ogrenci.class);
 		List<Ogrenci> resultList=query.getResultList();
 		
 		
@@ -54,8 +54,8 @@ public class OgrenciDAOImpl implements OgrenciDAO {
 	@Override
 	public void deleteOgrenci(int ogrId) {
 		Session session = sessionFactory.getCurrentSession();
-		Ogrenci ogr = session.get(Ogrenci.class, ogrId);
-		session.delete(ogr);
+		
+		session.createQuery("update Ogrenci set durum=0 where id="+ogrId).executeUpdate();
 		
 	}
 

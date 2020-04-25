@@ -67,4 +67,15 @@
 	<!--Resources dosyalarını okuyacağım yer -->
 	<mvc:resources location="/resources/" mapping="/resources/**"></mvc:resources>
 	
+	<!--Hata mesajlarını okuyacağım yer -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames" value="resources/message" />
+	</bean>
+	
+<!-- 	<bean id="kullanici" 
+		class="com.okan.domain.kullanici">
+		<property name="kullanici" ref="kullanici"/>
+	</bean>
+	-->
 </beans>

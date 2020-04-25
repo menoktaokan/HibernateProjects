@@ -1,6 +1,7 @@
 package com.okan.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.okan.dao.KursDAO;
 import com.okan.domain.Kurs;
+import com.okan.domain.Ogretmen;
 import com.okan.service.KullaniciServisi;
 import com.okan.service.KursServisi;
 
@@ -28,51 +30,53 @@ public class KursController {
 	
 	@GetMapping("/list")
 	public String kursListele(Model model) {
-		
-		List<Kurs> kurslar=kursServisi.getKurslar();
-		model.addAttribute("kurs", kurslar);
 		if(!kullaniciServisi.kullaniciVarMı())
 			return "redirect:/";
+		List<Kurs> kurslar=kursServisi.getKurslar();
+		model.addAttribute("kurs", kurslar);
+		
 		return "kurs-liste";
 	}
 	
 	@GetMapping("/kurs-ekle")
 	public String kursEkle(Model model) {
-		Kurs kurs = new Kurs();
-		model.addAttribute("kurs", kurs);		
 		if(!kullaniciServisi.kullaniciVarMı())
 			return "redirect:/";
+		
+		Kurs kurs = new Kurs();
+		model.addAttribute("kurs", kurs);		
 		return "kurs-form";
 	}
 	
 	@PostMapping("/kurs-kaydet")
 	public String kursKaydet(@ModelAttribute("kurs") Kurs kurs) {
-		
-		kursServisi.saveKurs(kurs);	
 		if(!kullaniciServisi.kullaniciVarMı())
 			return "redirect:/";
+		
+		kursServisi.saveKurs(kurs);	
+		
 		return "redirect:/kurs/list";
 	}
 
 	@GetMapping("/kurs-guncelle")
 	public String kursGuncelle(@RequestParam("ogrenciId") int kursId, Model model) {
-		
-		Kurs kurs = kursServisi.getKurs(kursId);
-		
-		model.addAttribute("kurs", kurs);		
 		if(!kullaniciServisi.kullaniciVarMı())
 			return "redirect:/";
+		
+		Kurs kurs = kursServisi.getKurs(kursId);
+		model.addAttribute("kurs", kurs);		
+		
 		return "kurs-form";
 	}
 	
 	@GetMapping("/kurs-sil")
 	public String kursSil(@RequestParam("ogrenciId") int kursId) {
-		
+		if(!kullaniciServisi.kullaniciVarMı())
+			return "redirect:/";
 //		Kurs kurs = kursServisi.getKurs(kursId);
 			
 		kursServisi.deleteKurs(kursId);
-		if(!kullaniciServisi.kullaniciVarMı())
-			return "redirect:/";
+		
 		return "redirect:/kurs/list";
 	}
 	
@@ -81,5 +85,12 @@ public class KursController {
 		if(!kullaniciServisi.kullaniciVarMı())
 			return "redirect:/";
 		return "redirect:../index";
+	}
+	
+	@ModelAttribute("ogretmenler")
+	public Map<Integer, Ogretmen> getOgretmenler(){
+		
+		
+		return kullaniciServisi.getOgretmenler();
 	}
 }

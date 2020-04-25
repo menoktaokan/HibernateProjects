@@ -29,19 +29,6 @@ public class Jobs {
 	@Column(name = "max_salary")
 	private Double maxSalary;
 
-//	@OneToMany(mappedBy = "ogretmen", cascade = CascadeType.ALL)
-//	private List<Employee> employee;
-//	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-//	@JoinColumn(name = "job_id")
-//	private List<Employee> employeeList;
-//
-//	public void addEmployee(Employee employee) {
-//		if (employeeList == null) {
-//			employeeList = new ArrayList<Employee>();
-//		}
-//		employeeList.add(employee);
-//	}
-
 	public String getJobId() {
 		return jobId;
 	}
@@ -74,9 +61,12 @@ public class Jobs {
 		this.maxSalary = maxSalary;
 	}
 
+	
+
 	@Override
 	public String toString() {
-		return jobId;
+		return "Jobs [jobId=" + jobId + ", jobTitle=" + jobTitle + ", minSalary=" + minSalary + ", maxSalary="
+				+ maxSalary + "]";
 	}
 
 	public Jobs() {

@@ -26,6 +26,9 @@ public class Ogrenci {
 
 	@Column(name = "OGRENCI_NO")
 	private Integer ogrenciNo;
+	
+	@Column(name = "DURUM")
+	private Integer durum;
 
 	
 	public Integer getId() {
@@ -58,6 +61,14 @@ public class Ogrenci {
 
 	public void setOgrenciNo(Integer ogrenciNo) {
 		this.ogrenciNo = ogrenciNo;
+	}
+
+	public Integer getDurum() {
+		return durum;
+	}
+
+	public void setDurum(Integer durum) {
+		this.durum = durum;
 	}
 
 	public Ogrenci() {

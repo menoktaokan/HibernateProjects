@@ -12,7 +12,7 @@ table {
 	border-collapse: collapse;
 	border-bottom: 1px solid gray;
 	font-family: Tahoma, Verdana, Segoe, sans-serif;
-	width: 72%;
+	width: 100%;
 }
 
 th {
@@ -36,18 +36,20 @@ tr:nth-child(odd) {
 }
 
 #header {
-	width: 72%;
+	width: 100%;
 	background: #4267B2;
 	margin-top: 0px;
 	margin-bottom: 20px; 
 	padding : 15px 0px;
 	color: #FFFFFF;
+	
 }
 
 #header h2 {
 	width: 100%;
 	margin: auto;
 	color: #FFFFFF;
+	text-align: center;
 }
 
 .update-button {

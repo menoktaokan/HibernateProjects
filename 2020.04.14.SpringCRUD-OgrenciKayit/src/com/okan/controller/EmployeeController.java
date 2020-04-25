@@ -5,9 +5,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +21,7 @@ import com.okan.domain.Departments;
 import com.okan.domain.Employee;
 import com.okan.domain.Jobs;
 import com.okan.service.EmployeeService;
+import com.okan.service.KullaniciServisi;
 
 @Controller
 @RequestMapping("/employee")
@@ -26,42 +30,59 @@ public class EmployeeController {
 	@Autowired
 	EmployeeService employeeService;
 	
+	@Autowired
+	KullaniciServisi kullaniciServisi;
+	
 	@GetMapping("/list")
 	public String listEmployee(Model model) {
 		
+		if(!kullaniciServisi.kullaniciVarMı())
+			return "redirect:/";
 		return "employee-list";
 	}
 	
 	@GetMapping("/employee-ekle")
 	public String employeeEkle(Model model) {
 		Employee employee = new Employee();
-		System.out.println(employee);
 		model.addAttribute("employee", employee);
+		if(!kullaniciServisi.kullaniciVarMı())
+			return "redirect:/";
 		return "employee-form";
 	}
 	
 	@PostMapping("/employee-kaydet")
-	public String employeeKaydet(@ModelAttribute("employee") Employee employee) {
-		System.out.println("\n\n\n");
-		System.out.println(employee);
-		System.out.println("\n\n\n");
-		return "redirect:/employee/list";
-	}
-	
-	@GetMapping("/employee-delete")
-	public String epmloyeeSil(@RequestParam("employeId") int empId) {
-		
-	
-		
+	public String employeeKaydet(@Valid @ModelAttribute("employee") Employee employee, BindingResult br, Model model) {
+		Jobs job=employeeService.getJob(employee.getJob().getJobId());
+		if(employee.getSalary()<job.getMinSalary()) {
+		br.rejectValue("salary", "error.emplooye", "Minimum maaştan("+job.getMinSalary()+") düşük olamaz!");
+		}
+		if(employee.getSalary()>job.getMaxSalary()) {
+			br.rejectValue("salary", "error.emplooye", "Maximum maaştan("+job.getMaxSalary()+") yüksek olamaz!");
+			}
+		System.out.println(br);
+		if(br.hasErrors())
+			return "employee-form";
+		employeeService.saveEmployee(employee);
+		if(!kullaniciServisi.kullaniciVarMı())
+			return "redirect:/";
 		return "redirect:/employee/list";
 	}
 	
 	@GetMapping("employee-update")
 	public String employeeGuncelle(@RequestParam("employeId") int empId, Model model) {
 		Employee employee = employeeService.getEmployee(empId);
-		System.out.println(employee);
 		model.addAttribute(employee);
+		if(!kullaniciServisi.kullaniciVarMı())
+			return "redirect:/";
 		return "employee-form";
+	}
+	
+	@GetMapping("employee-delete")
+	public String employeeDelete(@RequestParam("employeId") int empId) {
+		employeeService.deleteEmployee(empId);
+		if(!kullaniciServisi.kullaniciVarMı())
+			return "redirect:/";
+		return "redirect:/employee/list";
 	}
 	
 	@ModelAttribute("employeeList")
@@ -70,7 +91,7 @@ public class EmployeeController {
 		return employee;
 	}
 	
-	@ModelAttribute("department")
+	@ModelAttribute("departments")
 	public Map<Integer, String> getDepartments(){
 		List<Departments> depts=employeeService.listDepartments();
 		 Map<Integer, String> getDepartments = new HashMap<Integer, String>();
@@ -80,25 +101,25 @@ public class EmployeeController {
 		return getDepartments;
 	}
 	
-	@ModelAttribute("job")
-	public Map<String,String> getJobss(){
+	@ModelAttribute("jobs")
+	public List<String> getJobss(){
 		List<Jobs> jobs=employeeService.listJobs();
-		
-		 Map<String, String> getJobs = new HashMap<String, String>();
+		List<String> jobIds=new ArrayList<String>();
+//		 Map<String, String> getJobs = new HashMap<String, String>();
 		 for (Jobs job : jobs) {
-			 getJobs.put(job.getJobId(), job.getJobId());
+			 jobIds.add(job.getJobId());
 		}
-		return getJobs;
+		return jobIds;
 	}
 	
 	@ModelAttribute("manager")
-	public Map<Integer,String> listManager() {
+	public Map<Integer,Employee> listManager() {
 
-		Map<Integer, String> manager= new HashMap<Integer, String>();
+		Map<Integer, Employee> manager= new HashMap<Integer, Employee>();
 		
 		List<Employee> managerList = employeeService.listEmployees();
 		for (Employee employee : managerList) {
-			manager.put(employee.getId(), employee.getName());
+			manager.put(employee.getId(), employee);
 		}
 
 		return manager;

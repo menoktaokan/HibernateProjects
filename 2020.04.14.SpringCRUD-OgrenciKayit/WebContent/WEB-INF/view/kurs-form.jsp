@@ -19,14 +19,21 @@
 		</div>
 		<frm:form action="kurs-kaydet" modelAttribute="kurs" method="POST">
 			<frm:hidden path="id" />
+			<frm:hidden path="durum" value="1"/>
 			<table>
 				<tr>
 					<td><label>İsim</label></td>
-					<td><frm:input path="ad" /></td>
+					<td><frm:input path="ad" required="true"/></td>
 				</tr>
 				<tr>
 					<td><label>Saat</label></td>
-					<td><frm:input path="saat" /></td>
+					<td><frm:input type="number" path="saat" required="true"/></td>
+				</tr>
+				<tr>
+					<td><label>Öğretmen</label></td>
+					<td> <frm:select path="ogretmen.id">
+							<frm:options items="${ogretmenler}"/>
+						</frm:select></td>
 				</tr>
 				<tr>
 					<td></td>

@@ -26,6 +26,7 @@
 					<th>ID</th>
 					<th>İsim</th>
 					<th>Saat</th>
+					<th>Öğretmen</th>
 					<th>İşlem</th>
 				</tr>
 			</thead>
@@ -41,6 +42,7 @@
 						<td>${kurs.id}</td>
 						<td>${kurs.ad}</td>
 						<td>${kurs.saat}</td>
+						<td>${kurs.ogretmen}</td>
 						<td><button onclick="window.location.href='${updateLink}'"
 								class="update-button">Güncelle</button>
 							<button

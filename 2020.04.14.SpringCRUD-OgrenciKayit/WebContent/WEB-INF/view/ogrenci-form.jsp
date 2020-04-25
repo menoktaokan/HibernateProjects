@@ -18,7 +18,8 @@
 			<h2>Öğrenci Formu</h2>
 			</div>
 			<frm:form action="ogrenci-kaydet" modelAttribute="ogrenci" method="POST">
-			<frm:hidden path=""/>
+			<frm:hidden path="id"/>
+			<frm:hidden path="durum" value="1"/>
 				<table>
 					<tr>
 						<td><label>İsim</label></td>

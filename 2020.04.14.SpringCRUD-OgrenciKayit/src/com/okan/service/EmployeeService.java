@@ -16,5 +16,12 @@ public interface EmployeeService {
 
 	Employee getEmployee(int empId);
 
+	void saveEmployee(Employee employee);
+
+	void deleteEmployee(int empId);
+
+	Jobs getJob(String jobId);
+
+
 
 }

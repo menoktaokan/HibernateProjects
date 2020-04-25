@@ -23,7 +23,7 @@ public class KursDAOImpl implements KursDAO {
 		
 		Session session = sessionFactory.getCurrentSession();
 		
-		Query<Kurs> query = session.createQuery("from Kurs", Kurs.class);
+		Query<Kurs> query = session.createQuery("from Kurs where durum=1", Kurs.class);
 		List<Kurs> resultList = query.getResultList();
 		
 		return resultList;
@@ -49,8 +49,7 @@ public class KursDAOImpl implements KursDAO {
 	@Override
 	public void deleteKurs(int kursId) {
 		Session session = sessionFactory.getCurrentSession();
-		Kurs kurs =session.get(Kurs.class, kursId);
-		session.delete(kurs);
+		session.createQuery("update Kurs set durum=0 where id="+kursId).executeUpdate();
 	}
 
 }

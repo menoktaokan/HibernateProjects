@@ -13,21 +13,14 @@
 	href="${pageContext.request.contextPath}/resources/css/style.css">
 </head>
 <body>
-
-	<br>
-	<br>
-	<br>
 	<div id="wrapper">
 		<div id="header">
 			<h2>Employee List</h2>
 		</div>
-		<br>
-		<br>
 		<button onclick="window.location.href='employee-ekle'"
-			class="employee-add">Employee Add</button>
+			class="ekle">Employee Add</button>
 		<br>
-		<br>
-
+<br>
 		<table>
 			<thead>
 				<tr>
@@ -37,10 +30,10 @@
 					<th>E-Mail</th>
 					<th>Phone Number</th>
 					<th>Hire Date</th>
-					<th>Job ID</th>
+					<th>Job</th>
 					<th>Salary</th>
-					<th>Manager ID</th>
-					<th>Department ID</th>
+					<th>Manager</th>
+					<th>Department</th>
 					<th>Operation</th>
 
 				</tr>
@@ -61,7 +54,7 @@
 						<td>${employee.email}</td>
 						<td>${employee.phoneNumber}</td>
 						<td>${employee.hireDate}</td>
-						<td>${employee.job}</td>
+						<td>${employee.job.jobTitle}</td>
 						<td>${employee.salary}</td>
 						<td>${employee.manager.name}</td>
 						<td>${employee.department}</td>
@@ -81,8 +74,8 @@
 		</table>
 		<hr>
 		<button onclick="window.location.href='employee-ekle'"
-			class="employee-add">Employee Add</button>
-
+			class="ekle">Employee Add</button>
+<button onclick="window.location.href='../index'" class="ana-sayfa">Ana Sayfa</button>
 
 	</div>
 
