@@ -27,6 +27,18 @@
 		return true;
 	}
 </script>
+<style>
+body:active, .ekle:active, #kaydet:active, .ekle:active, .vazgec:active, .ana-sayfa:active,
+	.delete-button:active, .update-button:active {
+	cursor: -webkit-grabbing;
+	cursor: grabbing;
+}
+
+body {
+	cursor: cursor: -webkit-grab;
+	cursor: grab;
+}
+</style>
 </head>
 <body>
 	<frm:form name="form" action="girisYap" method="POST" class="login-form"
@@ -45,6 +57,7 @@
 <%-- 		<frm:errors path="sifre" style="color:white" /> --%>
 		<input type="submit" name="Login" value="Giris Yap"
 			class="login-submit" />
+			<frm:errors path="kullaniciAdi" style="color:white" /> 
 	</frm:form>
 
 	<div class="underlay-photo"></div>

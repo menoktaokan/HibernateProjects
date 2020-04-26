@@ -43,15 +43,19 @@ public class EmployeeController {
 	
 	@GetMapping("/employee-ekle")
 	public String employeeEkle(Model model) {
-		Employee employee = new Employee();
-		model.addAttribute("employee", employee);
 		if(!kullaniciServisi.kullaniciVarMı())
 			return "redirect:/";
+		Employee employee = new Employee();
+		model.addAttribute("employee", employee);
+		
 		return "employee-form";
 	}
 	
 	@PostMapping("/employee-kaydet")
 	public String employeeKaydet(@Valid @ModelAttribute("employee") Employee employee, BindingResult br, Model model) {
+		if(!kullaniciServisi.kullaniciVarMı())
+			return "redirect:/";
+		
 		Jobs job=employeeService.getJob(employee.getJob().getJobId());
 		if(employee.getSalary()<job.getMinSalary()) {
 		br.rejectValue("salary", "error.emplooye", "Minimum maaştan("+job.getMinSalary()+") düşük olamaz!");
@@ -63,8 +67,7 @@ public class EmployeeController {
 		if(br.hasErrors())
 			return "employee-form";
 		employeeService.saveEmployee(employee);
-		if(!kullaniciServisi.kullaniciVarMı())
-			return "redirect:/";
+		
 		return "redirect:/employee/list";
 	}
 	
@@ -79,9 +82,10 @@ public class EmployeeController {
 	
 	@GetMapping("employee-delete")
 	public String employeeDelete(@RequestParam("employeId") int empId) {
-		employeeService.deleteEmployee(empId);
 		if(!kullaniciServisi.kullaniciVarMı())
 			return "redirect:/";
+		employeeService.deleteEmployee(empId);
+		
 		return "redirect:/employee/list";
 	}
 	

@@ -7,7 +7,7 @@
 body {
   @include display(flex);
   @include align-content(center);
-  color: #353535;
+  color: grey;
   min-height: 100vh;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;

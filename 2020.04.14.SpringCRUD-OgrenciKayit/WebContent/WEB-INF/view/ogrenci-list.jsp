@@ -10,6 +10,22 @@
 <title>Öğrenciler</title>
 <link type="text/css" rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/style.css">
+<style>
+.ekle, #kaydet, .ekle, .vazgec, .ana-sayfa, .delete-button,
+	.update-button {
+	cursor: pointer;
+}
+
+body:active, .ekle:active, #kaydet:active, .ekle:active, .vazgec:active, .ana-sayfa:active,
+	.delete-button:active, .update-button:active {
+	cursor: -webkit-grabbing;
+	cursor: grabbing;
+}
+body{
+cursor: cursor: -webkit-grab;
+	cursor: grab;
+}
+</style>
 </head>
 <body>
 	<div id="wrapper">
@@ -45,7 +61,8 @@
 							<td>${ogrenci.ogrenciNo}</td>
 							<td><button onclick="window.location.href='${updateLink}'"
 									class="update-button">Güncelle</button>
-								<button onclick="if(confirm('Siliyoruz, Emin misin?'))window.location.href='${deleteLink}'"
+								<button
+									onclick="if(confirm('Siliyoruz, Emin misin?'))window.location.href='${deleteLink}'"
 									class="delete-button">Sil</button></td>
 						</tr>
 
@@ -55,8 +72,9 @@
 			<br>
 			<button onclick="window.location.href='ogrenci-ekle'" class="ekle">Öğrenci
 				Ekle</button>
-				<br> <br>
-		<button onclick="window.location.href='index'" class="ana-sayfa">Ana Sayfa</button>
+			<br> <br>
+			<button onclick="window.location.href='index'" class="ana-sayfa">Ana
+				Sayfa</button>
 		</div>
 	</div>
 </body>

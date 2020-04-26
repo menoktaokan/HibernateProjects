@@ -43,6 +43,7 @@ public class AnaSayfaController {
 			return "giris-ekrani";
 		if(kullaniciServisi.girisYap(kullaniciAdi, sifre))
 		return "index";
+		br.rejectValue("kullaniciAdi", "error.kullanici", "Hatalı kullanıcı adı/şifre!");
 		return "giris-ekrani";
 	}
 }

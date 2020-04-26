@@ -11,36 +11,56 @@
 <title>Öğrenci Formu</title>
 <link type="text/css" rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/style.css">
+<style>
+.ekle, #kaydet, .ekle, .vazgec, .ana-sayfa, .delete-button,
+	.update-button {
+	cursor: pointer;
+}
+
+body:active, .ekle:active, #kaydet:active, .ekle:active, .vazgec:active, .ana-sayfa:active,
+	.delete-button:active, .update-button:active {
+	cursor: -webkit-grabbing;
+	cursor: grabbing;
+}
+body{
+cursor: cursor: -webkit-grab;
+	cursor: grab;
+}
+</style>
 </head>
 <body>
 	<div id="wrapper">
 		<div id="header">
 			<h2>Öğrenci Formu</h2>
-			</div>
-			<frm:form action="ogrenci-kaydet" modelAttribute="ogrenci" method="POST">
-			<frm:hidden path="id"/>
-			<frm:hidden path="durum" value="1"/>
-				<table>
-					<tr>
-						<td><label>İsim</label></td>
-						<td><frm:input path="ad" /></td>
-					</tr>
-					<tr>
-						<td><label>Soyisim</label></td>
-						<td><frm:input path="soyad" /></td>
-					</tr>
-					<tr>
-						<td><label>Öğrenci No</label></td>
-						<td><frm:input path="ogrenciNo" /></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td><frm:button value="save" name="save" id="kaydet">Kaydet</frm:button></td>
-					</tr>
-				</table>
-			</frm:form>
-		<br><br>
-<button onclick="window.location.href='list'" class="vazgec">Vazgeç</button>
+		</div>
+		<frm:form action="ogrenci-kaydet" modelAttribute="ogrenci"
+			method="POST">
+			<frm:hidden path="id" />
+			<frm:errors path="id"/>
+			<frm:hidden path="durum" value="1" />
+			<table>
+				<tr>
+					<td><label>İsim</label></td>
+					<td><frm:input path="ad" required="true"/></td>
+				</tr>
+				<tr>
+					<td><label>Soyisim</label></td>
+					<td><frm:input path="soyad" required="true" /></td>
+				</tr>
+				<tr>
+					<td><label>Öğrenci No</label></td>
+					<td><frm:input path="ogrenciNo" required="true" />
+					<frm:errors path="ogrenciNo"/></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><frm:button value="save" name="save" id="kaydet">Kaydet</frm:button></td>
+				</tr>
+			</table>
+		</frm:form>
+		<br>
+		<br>
+		<button onclick="window.location.href='list'" class="vazgec">Vazgeç</button>
 	</div>
 
 	<div id="container">

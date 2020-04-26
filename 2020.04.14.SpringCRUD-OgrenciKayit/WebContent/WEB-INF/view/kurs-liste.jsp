@@ -10,6 +10,22 @@
 <title>Kurslar</title>
 <link type="text/css" rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/style.css">
+<style>
+.ekle, #kaydet, .ekle, .vazgec, .ana-sayfa, .delete-button,
+	.update-button {
+	cursor: pointer;
+}
+
+body:active, .ekle:active, #kaydet:active, .ekle:active, .vazgec:active, .ana-sayfa:active,
+	.delete-button:active, .update-button:active {
+	cursor: -webkit-grabbing;
+	cursor: grabbing;
+}
+body{
+cursor: cursor: -webkit-grab;
+	cursor: grab;
+}
+</style>
 </head>
 <body>
 	<div id="wrapper">
@@ -56,7 +72,8 @@
 		<button onclick="window.location.href='kurs-ekle'" class="ekle">Kurs
 			Ekle</button>
 		<br> <br>
-		<button onclick="window.location.href='../index'" class="ana-sayfa">Ana Sayfa</button>
+		<button onclick="window.location.href='../index'" class="ana-sayfa">Ana
+			Sayfa</button>
 	</div>
 
 </body>

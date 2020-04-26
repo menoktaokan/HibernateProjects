@@ -11,10 +11,26 @@
 <title>Employee Form</title>
 <link type="text/css" rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/style.css">
-	<style >
-	.hata{
-	color:red;}
-	</style>
+<style>
+.hata {
+	color: red;
+}
+
+.ekle, #kaydet, .ekle, .vazgec, .ana-sayfa, .delete-button,
+	.update-button {
+	cursor: pointer;
+}
+
+body:active, .ekle:active, #kaydet:active, .ekle:active, .vazgec:active, .ana-sayfa:active,
+	.delete-button:active, .update-button:active {
+	cursor: -webkit-grabbing;
+	cursor: grabbing;
+}
+body{
+cursor: cursor: -webkit-grab;
+	cursor: grab;
+}
+</style>
 
 </head>
 <body>
@@ -24,45 +40,48 @@
 		</div>
 		<frm:form action="employee-kaydet" modelAttribute="employee"
 			method="POST">
-			<frm:hidden path="id"/>
-			<frm:hidden path="status" value="1"/>
+			<frm:hidden path="id" />
+			<frm:hidden path="status" value="1" />
 			<table>
 				<tr>
 					<td><label>First Name</label></td>
-					<td><frm:input path="name"  required="true"/>
-					<frm:errors path="name" cssClass="hata"/>
-					</td>
+					<td><frm:input path="name" required="true" /> <frm:errors
+							path="name" cssClass="hata" /></td>
 				</tr>
 				<tr>
 					<td><label>Last Name</label></td>
-					<td><frm:input path="lastname"  required="true"/>
-					<frm:errors path="lastname" cssClass="hata"/></td>
+					<td><frm:input path="lastname" required="true" /> <frm:errors
+							path="lastname" cssClass="hata" /></td>
 				</tr>
 				<tr>
 					<td><label>Email</label></td>
-					<td><frm:input path="email"  required="true"/>
-					<frm:errors path="email" cssClass="hata"/></td>
+					<td><frm:input path="email" required="true" /> <frm:errors
+							path="email" cssClass="hata" /></td>
 				</tr>
 				<tr>
 					<td><label>Phone Number</label></td>
-					<td><frm:input  path="phoneNumber" placeholder="650.507.9876" required="true" pattern="^[0-9+-]+(\\.[0-9+-]+)*[0-9-]+(.[0-9]+)$" title="Rakam veya nokta içerebilir"/>
-					<frm:errors path="phoneNumber" cssClass="hata"/></td>
+					<td><frm:input path="phoneNumber" placeholder="650.507.9876"
+							required="true"
+							pattern="^[0-9+-]+(\\.[0-9+-]+)*[0-9-]+(.[0-9]+)$"
+							title="Rakam veya nokta içerebilir" /> <frm:errors
+							path="phoneNumber" cssClass="hata" /></td>
 				</tr>
 				<tr>
 					<td><label>Hire Date</label></td>
-					<td><frm:input type="date" path="hireDate" required="true" placeholder="2020-04-23"/>
-					<frm:errors path="hireDate" cssClass="hata"/></td>
+					<td><frm:input type="date" path="hireDate" required="true"
+							placeholder="2020-04-23" /> <frm:errors path="hireDate"
+							cssClass="hata" /></td>
 				</tr>
 				<tr>
 					<td><label>Job Title</label></td>
 					<td><frm:select path="job.jobId">
-							<frm:options items="${jobs}"/>
+							<frm:options items="${jobs}" />
 						</frm:select></td>
 				</tr>
 				<tr>
 					<td><label> Salary </label></td>
-					<td><frm:input type="number" path="salary"  required="true"/>
-					<frm:errors path="salary" cssClass="hata"/></td>
+					<td><frm:input type="number" path="salary" required="true" />
+						<frm:errors path="salary" cssClass="hata" /></td>
 				</tr>
 				<tr>
 					<td><label>Manager ID</label></td>
@@ -82,8 +101,7 @@
 				</tr>
 			</table>
 		</frm:form>
-		<br>
-		<br>
+		<br> <br>
 		<button onclick="window.location.href='list'" class="vazgec">Back</button>
 	</div>
 

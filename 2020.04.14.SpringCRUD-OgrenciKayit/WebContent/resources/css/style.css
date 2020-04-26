@@ -5,7 +5,7 @@ html, body {
 	margin-right: 15px;
 	padding: 0px;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
-/* 	font-size: 10px; */
+	/* 	font-size: 10px; */
 }
 
 table {
@@ -39,10 +39,9 @@ tr:nth-child(odd) {
 	width: 100%;
 	background: #4267B2;
 	margin-top: 0px;
-	margin-bottom: 20px; 
-	padding : 15px 0px;
+	margin-bottom: 20px;
+	padding: 15px 0px;
 	color: #FFFFFF;
-	
 }
 
 #header h2 {
@@ -83,7 +82,7 @@ tr:nth-child(odd) {
 	font-weight: bold;
 }
 
-#kaydet, .ekle{
+#kaydet, .ekle {
 	background: white;
 	border-radius: 7px;
 	width: 150px;
@@ -91,12 +90,4 @@ tr:nth-child(odd) {
 	font-weight: bold;
 	background: silver;
 }
-.button{
-	background: white;
-	border-radius: 7px;
-	width: 150px;
-	border-color: maroon;
-	font-weight: bold;
-	background: lime;
-	
-}
+

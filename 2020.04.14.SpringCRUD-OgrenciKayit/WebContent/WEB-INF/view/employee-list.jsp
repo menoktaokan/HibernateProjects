@@ -11,16 +11,60 @@
 
 <link type="text/css" rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/style.css">
+<style>
+.ekle, #kaydet, .ekle, .vazgec, .ana-sayfa, .delete-button,
+	.update-button {
+	cursor: pointer;
+}
+
+body:active, .ekle:active, #kaydet:active, .ekle:active, .vazgec:active, .ana-sayfa:active,
+	.delete-button:active, .update-button:active {
+	cursor: -webkit-grabbing;
+	cursor: grabbing;
+}
+
+body {
+	cursor: cursor: -webkit-grab;
+	cursor: grab;
+}
+#myBtn{
+	float: right;
+}
+</style>
+<script>
+	//Get the button
+	var mybutton = document.getElementById("myBtn");
+
+	// When the user scrolls down 20px from the top of the document, show the button
+	window.onscroll = function() {
+		scrollFunction()
+	};
+
+	function scrollFunction() {
+		if (document.body.scrollTop > 20
+				|| document.documentElement.scrollTop > 20) {
+			mybutton.style.display = "block";
+		} else {
+			mybutton.style.display = "none";
+		}
+	}
+
+	// When the user clicks on the button, scroll to the top of the document
+	function topFunction() {
+		document.body.scrollTop = 10000;
+		document.documentElement.scrollTop= 10000;
+	}
+</script>
 </head>
 <body>
 	<div id="wrapper">
 		<div id="header">
 			<h2>Employee List</h2>
 		</div>
-		<button onclick="window.location.href='employee-ekle'"
-			class="ekle">Employee Add</button>
-		<br>
-<br>
+		<button onclick="window.location.href='employee-ekle'" class="ekle">Employee
+			Add</button>
+			<button onclick="topFunction()" id="myBtn" class="vazgec" title="Go to top">Bottom</button>
+		<br> <br>
 		<table>
 			<thead>
 				<tr>
@@ -60,7 +104,7 @@
 						<td>${employee.department}</td>
 
 						<td>
-<%-- 							<a href="${updateLink}">Update</a> --%>
+							<%-- 							<a href="${updateLink}">Update</a> --%>
 							<button onclick="window.location.href='${updateLink}'"
 								class="update-button">Update</button>
 							<button
@@ -73,10 +117,11 @@
 
 		</table>
 		<hr>
-		<button onclick="window.location.href='employee-ekle'"
-			class="ekle">Employee Add</button>
-<button onclick="window.location.href='../index'" class="ana-sayfa">Ana Sayfa</button>
-
+		<button onclick="window.location.href='employee-ekle'" class="ekle">Employee
+			Add</button>
+		<button onclick="window.location.href='../index'" class="ana-sayfa">Ana
+			Sayfa</button>
+		
 	</div>
 
 </body>

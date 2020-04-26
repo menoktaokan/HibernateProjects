@@ -27,7 +27,7 @@ public class KullaniciDAOImlp implements KullaniciDAO {
 	@Override
 	public Kullanici kullaniciGetir() {
 	
-		System.out.println("\n\n"+kullanici+"\n\n");
+		System.out.println("\n"+kullanici+"\n");
 
 		return kullanici;
 	}
