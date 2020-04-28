@@ -13,4 +13,6 @@ public interface OgrenciServisi {
 
 	public void deleteOgrenci(int ogrId);
 
+	public List<Ogrenci> searchOgrenci(Ogrenci ogrenci);
+
 }

@@ -63,6 +63,13 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 
+	@Override
+	public List<Employee> searchEmployee(Employee employee) {
+		
+		return employeeDAO.searchEmployee(employee);
+	}
+
+
 	
 
 

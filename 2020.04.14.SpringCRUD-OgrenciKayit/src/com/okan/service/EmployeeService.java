@@ -22,6 +22,8 @@ public interface EmployeeService {
 
 	Jobs getJob(String jobId);
 
+	List<Employee> searchEmployee(Employee employee);
+
 
 
 }

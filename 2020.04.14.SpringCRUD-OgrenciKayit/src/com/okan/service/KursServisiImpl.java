@@ -41,4 +41,10 @@ public class KursServisiImpl implements KursServisi {
 		kursDAO.deleteKurs(kursId);
 	}
 
+	@Override
+	public List<Kurs>  searchKurs(Kurs kursAra) {
+		return kursDAO.searchKurs(kursAra);
+		
+	}
+
 }

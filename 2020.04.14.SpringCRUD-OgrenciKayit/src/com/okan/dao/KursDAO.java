@@ -14,4 +14,6 @@ public interface KursDAO {
 
 	public void deleteKurs(int kursId);
 
+	public List<Kurs>  searchKurs(Kurs kursAra);
+
 }

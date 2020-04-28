@@ -3,6 +3,7 @@
 <%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
 <%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="frm" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -16,13 +17,14 @@
 	cursor: pointer;
 }
 
-body:active, .ekle:active, #kaydet:active, .ekle:active, .vazgec:active, .ana-sayfa:active,
-	.delete-button:active, .update-button:active {
+body:active, .ekle:active, #kaydet:active, .ekle:active, .vazgec:active,
+	.ana-sayfa:active, .delete-button:active, .update-button:active {
 	cursor: -webkit-grabbing;
 	cursor: grabbing;
 }
-body{
-cursor: cursor: -webkit-grab;
+
+body {
+	cursor: cursor: -webkit-grab;
 	cursor: grab;
 }
 </style>
@@ -47,6 +49,18 @@ cursor: cursor: -webkit-grab;
 				</tr>
 			</thead>
 			<tbody>
+				<frm:form action="kurs-ara" modelAttribute="kursAra" method="POST">
+					<tr>
+						<td><frm:input path="id" /></td>
+						<td><frm:input path="ad" /></td>
+						<td><frm:input path="saat" /></td>
+						<td><frm:select path="ogretmen.id">
+								<frm:option value="">*Hepsi*</frm:option>
+								<frm:options items="${ogretmenler}" />
+							</frm:select></td>
+						<td><frm:button value="save" name="save" id="kaydet">Ara</frm:button></td>
+					</tr>
+				</frm:form>
 				<c:forEach items="${kurs}" var="kurs">
 					<c:url var="updateLink" value="/kurs/kurs-guncelle">
 						<c:param name="ogrenciId" value="${kurs.id}" />
@@ -66,6 +80,7 @@ cursor: cursor: -webkit-grab;
 								class="delete-button">Sil</button></td>
 					</tr>
 				</c:forEach>
+
 			</tbody>
 		</table>
 		<br>

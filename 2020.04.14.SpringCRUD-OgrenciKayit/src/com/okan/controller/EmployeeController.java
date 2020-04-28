@@ -35,9 +35,11 @@ public class EmployeeController {
 	
 	@GetMapping("/list")
 	public String listEmployee(Model model) {
-		
 		if(!kullaniciServisi.kullaniciVarMı())
 			return "redirect:/";
+		List<Employee> employeeList = employeeService.listEmployees();
+		model.addAttribute("employeeList", employeeList);
+		model.addAttribute("employeeSearch", new Employee());
 		return "employee-list";
 	}
 	
@@ -73,10 +75,12 @@ public class EmployeeController {
 	
 	@GetMapping("employee-update")
 	public String employeeGuncelle(@RequestParam("employeId") int empId, Model model) {
-		Employee employee = employeeService.getEmployee(empId);
-		model.addAttribute(employee);
 		if(!kullaniciServisi.kullaniciVarMı())
 			return "redirect:/";
+		
+		Employee employee = employeeService.getEmployee(empId);
+		model.addAttribute(employee);
+		
 		return "employee-form";
 	}
 	
@@ -89,11 +93,13 @@ public class EmployeeController {
 		return "redirect:/employee/list";
 	}
 	
+	/*
 	@ModelAttribute("employeeList")
 	public List<Employee> getEmployees() {
 		List<Employee> employee = employeeService.listEmployees();
 		return employee;
 	}
+	*/
 	
 	@ModelAttribute("departments")
 	public Map<Integer, String> getDepartments(){
@@ -129,4 +135,12 @@ public class EmployeeController {
 		return manager;
 	}
 	
+	@PostMapping("/employee-ara")
+	public String searchEmployee(Model model, @ModelAttribute("employeeSearch") Employee employee) {
+		if(!kullaniciServisi.kullaniciVarMı())
+			return "redirect:/";
+		List<Employee> searchEmp=employeeService.searchEmployee(employee);
+		model.addAttribute("employeeList", searchEmp);
+		return "employee-list";
+	}
 }

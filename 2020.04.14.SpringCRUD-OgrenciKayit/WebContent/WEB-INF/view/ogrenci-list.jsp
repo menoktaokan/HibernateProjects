@@ -3,6 +3,7 @@
 <%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
 <%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="frm" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -47,6 +48,15 @@ cursor: cursor: -webkit-grab;
 					</tr>
 				</thead>
 				<tbody>
+				<frm:form action="ogrenci-ara" modelAttribute="ogrenciAra" method="POST">
+					<tr>
+						<td><frm:input path="id" /></td>
+						<td><frm:input path="ad" /></td>
+						<td><frm:input path="soyad" /></td>
+						<td><frm:input path="ogrenciNo" /></td>
+						<td><frm:button value="save" name="save" id="kaydet">Ara</frm:button></td>
+					</tr>
+				</frm:form>
 					<c:forEach items="${ogrenciler}" var="ogrenci">
 						<c:url var="updateLink" value="/ogrenci/ogrenci-guncelle">
 							<c:param name="ogrenciId" value="${ogrenci.id}" />

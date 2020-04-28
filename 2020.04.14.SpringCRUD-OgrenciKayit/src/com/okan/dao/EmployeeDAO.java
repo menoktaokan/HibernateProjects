@@ -22,5 +22,7 @@ public interface EmployeeDAO {
 
 	public Jobs getJob(String jobId);
 
+	public List<Employee> searchEmployee(Employee employee);
+
 
 }

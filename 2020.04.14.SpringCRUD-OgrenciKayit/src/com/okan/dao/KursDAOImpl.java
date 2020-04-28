@@ -23,8 +23,7 @@ public class KursDAOImpl implements KursDAO {
 		
 		Session session = sessionFactory.getCurrentSession();
 		
-		Query<Kurs> query = session.createQuery("from Kurs where durum=1", Kurs.class);
-		List<Kurs> resultList = query.getResultList();
+		List<Kurs> resultList = session.createQuery("from Kurs where durum=1", Kurs.class).getResultList();
 		
 		return resultList;
 	}
@@ -34,6 +33,7 @@ public class KursDAOImpl implements KursDAO {
 	public void saveKurs(Kurs kurs) {
 		
 		Session session = sessionFactory.getCurrentSession();
+		kurs.setAd(kurs.getAd().toUpperCase());
 		session.saveOrUpdate(kurs);
 	}
 
@@ -50,6 +50,29 @@ public class KursDAOImpl implements KursDAO {
 	public void deleteKurs(int kursId) {
 		Session session = sessionFactory.getCurrentSession();
 		session.createQuery("update Kurs set durum=0 where id="+kursId).executeUpdate();
+	}
+
+	@Transactional
+	@Override
+	public List<Kurs>  searchKurs(Kurs kursAra) {
+		String kriter ="from Kurs where durum=1 ";
+		if(kursAra.getId()!=null)
+			kriter=kriter+"and id="+kursAra.getId()+" ";
+		
+		
+		if(kursAra.getAd()!=null)
+			kriter=kriter+"and ad like '%"+kursAra.getAd().toUpperCase()+"%' ";
+		
+		if(kursAra.getSaat()!=null)
+			kriter+="and saat="+kursAra.getSaat();
+		
+		if(kursAra.getOgretmen().getId()!=null)
+			kriter+="and ogretmen="+kursAra.getOgretmen().getId();
+		
+		System.out.println(kriter);
+		Session session = sessionFactory.getCurrentSession();
+		List<Kurs> resultList=session.createQuery(kriter, Kurs.class).getResultList();
+		return resultList;
 	}
 
 }

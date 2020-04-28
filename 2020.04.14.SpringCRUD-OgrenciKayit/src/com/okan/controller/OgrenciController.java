@@ -32,11 +32,14 @@ public class OgrenciController {
 	@GetMapping("/list") //sayfa geçişleri için
 //	@PostMapping("/list") //form verilerini gönderirken
 	public String listOgrenci(Model model) {
+		if(!kullaniciServisi.kullaniciVarMı())
+			return "redirect:/";
+		
 		List<Ogrenci>ogrList= ogrenciServisi.getOgrenciler();
 		
 		model.addAttribute("ogrenciler", ogrList);
-		if(!kullaniciServisi.kullaniciVarMı())
-			return "redirect:/";
+		model.addAttribute("ogrenciAra", new Ogrenci());
+		
 		return "ogrenci-list";
 	}
 	
@@ -89,5 +92,15 @@ public class OgrenciController {
 		if(!kullaniciServisi.kullaniciVarMı())
 			return "redirect:/";
 		return "redirect:../index";
+	}
+	
+	@PostMapping("/ogrenci-ara")
+	public String ogrenciAra(@ModelAttribute("ogrenciAra") Ogrenci ogrenci, Model model) {
+		if(!kullaniciServisi.kullaniciVarMı())
+			return "redirect:/";
+		List<Ogrenci> ogrenciAra=ogrenciServisi.searchOgrenci(ogrenci);
+		
+		model.addAttribute("ogrenciler", ogrenciAra);
+		return "ogrenci-list";
 	}
 }

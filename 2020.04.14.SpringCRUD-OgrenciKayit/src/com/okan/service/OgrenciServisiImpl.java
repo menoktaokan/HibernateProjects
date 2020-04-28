@@ -14,32 +14,38 @@ public class OgrenciServisiImpl implements OgrenciServisi {
 
 	@Autowired
 	private OgrenciDAO ogrenciDAO;
-	
-	@Transactional
+
+
 	@Override
 	public List<Ogrenci> getOgrenciler() {
 		
 		return ogrenciDAO.getOgrenciler();
 	}
 
-	@Transactional
+
 	@Override
 	public void saveOgrenci(Ogrenci ogr) {
 		
 		ogrenciDAO.saveOgrenci(ogr);		
 	}
-	@Transactional
+
 	@Override
 	public Ogrenci getOgrenci(int ogrId) {
 		
 		return ogrenciDAO.getOgrenci(ogrId);
 	}
-	@Transactional
+
 	@Override
 	public void deleteOgrenci(int ogrId) {
 		
 		ogrenciDAO.deleteOgrenci(ogrId);
 		
+	}
+
+	@Override
+	public List<Ogrenci> searchOgrenci(Ogrenci ogrenci) {
+		
+		return ogrenciDAO.searchOgrenci(ogrenci);
 	}
 	
 

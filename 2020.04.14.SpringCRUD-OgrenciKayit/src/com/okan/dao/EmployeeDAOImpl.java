@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.okan.domain.Departments;
 import com.okan.domain.Employee;
 import com.okan.domain.Jobs;
+import com.okan.domain.Ogrenci;
 
 @Repository
 public class EmployeeDAOImpl implements EmployeeDAO {
@@ -73,6 +74,48 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	public Jobs getJob(String jobId) {
 		Session session=sessionFactory.getCurrentSession();
 		return session.get(Jobs.class, jobId);
+	}
+
+	@Transactional
+	@Override
+	public List<Employee> searchEmployee(Employee employee) {
+		String kriter ="from Employee where status=1 ";
+		if(employee.getId()!=null)
+			kriter+="and id="+employee.getId();
+		
+		if(employee.getName()!=null)
+			kriter+=" and name like '%"+employee.getName()+"%' ";
+		
+		if(!employee.getLastname().equals(""))
+			kriter+=" and lastname like '%"+employee.getLastname()+"%' ";
+		
+		if(!employee.getEmail().equals(""))
+			kriter+=" and email like '%"+employee.getEmail()+"%' ";
+		
+		if(!employee.getPhoneNumber().equals(""))
+			kriter+=" and phoneNumber like '%"+employee.getPhoneNumber()+"%' ";
+		
+		if(employee.getHireDate()!=null)
+			kriter+=" and hireDate='"+employee.getPhoneNumber()+"' ";
+		System.out.println("employee.getHireDate()  "+employee.getHireDate());
+		
+		if(!employee.getJob().getJobId().equals(""))
+			kriter+=" and job like '"+employee.getJob().getJobId()+"'";
+		
+		if(employee.getSalary()!=null)
+			kriter+=" and salary="+employee.getSalary();
+		
+		if(employee.getManager().getId()!=null)
+			kriter+=" and manager="+employee.getManager().getId();
+		
+		if(employee.getDepartment().getDepartmentid()!=null)
+			kriter+=" and department="+employee.getDepartment().getDepartmentid();
+
+		System.out.println(kriter);
+		Session session = sessionFactory.getCurrentSession();
+		List<Employee> searchEmp =session.createQuery(kriter, Employee.class).getResultList();
+		
+		return searchEmp;
 	}
 
 

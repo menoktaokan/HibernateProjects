@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.okan.domain.Kurs;
 import com.okan.domain.Ogrenci;
 
 @Repository //@Component gibi davranıyor ama daha üst özellikler de içeriyor
@@ -33,14 +34,18 @@ public class OgrenciDAOImpl implements OgrenciDAO {
 		
 		return resultList;
 	}
+	
 	@Transactional
 	@Override
 	public void saveOgrenci(Ogrenci ogr) {
 
 		Session session = sessionFactory.getCurrentSession();
+		ogr.setAd(ogr.getAd().toUpperCase());
+		ogr.setSoyad(ogr.getSoyad().toUpperCase());
 		session.saveOrUpdate(ogr);
 		
 	}
+	
 	@Transactional
 	@Override
 	public Ogrenci getOgrenci(int ogrId) {
@@ -50,6 +55,7 @@ public class OgrenciDAOImpl implements OgrenciDAO {
 
 		return ogr;
 	}
+	
 	@Transactional
 	@Override
 	public void deleteOgrenci(int ogrId) {
@@ -57,6 +63,29 @@ public class OgrenciDAOImpl implements OgrenciDAO {
 		
 		session.createQuery("update Ogrenci set durum=0 where id="+ogrId).executeUpdate();
 		
+	}
+	
+	@Transactional
+	@Override
+	public List<Ogrenci> searchOgrenci(Ogrenci ogrenci) {
+		String kriter ="from Ogrenci where durum=1 ";
+		if(ogrenci.getId()!=null)
+			kriter=kriter+"and id="+ogrenci.getId()+" ";
+		
+		
+		if(ogrenci.getAd()!=null)
+			kriter=kriter+"and ad like '%"+ogrenci.getAd().toUpperCase()+"%' ";
+		
+		if(ogrenci.getSoyad()!=null)
+			kriter+="and soyad like '%"+ogrenci.getSoyad().toUpperCase()+"%' ";
+		
+		if(ogrenci.getOgrenciNo()!=null)
+			kriter+="and ogrenciNo="+ogrenci.getOgrenciNo();
+		
+		System.out.println(kriter);
+		Session session = sessionFactory.getCurrentSession();
+		List<Ogrenci> resultList=session.createQuery(kriter, Ogrenci.class).getResultList();
+		return resultList;
 	}
 
 }
