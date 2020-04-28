@@ -83,7 +83,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		if(employee.getId()!=null)
 			kriter+="and id="+employee.getId();
 		
-		if(employee.getName()!=null)
+		if(!employee.getName().equals(""))
 			kriter+=" and name like '%"+employee.getName()+"%' ";
 		
 		if(!employee.getLastname().equals(""))
@@ -95,9 +95,11 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		if(!employee.getPhoneNumber().equals(""))
 			kriter+=" and phoneNumber like '%"+employee.getPhoneNumber()+"%' ";
 		
+		/*
 		if(employee.getHireDate()!=null)
 			kriter+=" and hireDate='"+employee.getPhoneNumber()+"' ";
 		System.out.println("employee.getHireDate()  "+employee.getHireDate());
+		*/
 		
 		if(!employee.getJob().getJobId().equals(""))
 			kriter+=" and job like '"+employee.getJob().getJobId()+"'";
