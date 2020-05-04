@@ -68,8 +68,7 @@ public class KursDAOImpl implements KursDAO {
 		
 		if(kursAra.getOgretmen().getId()!=null)
 			kriter+="and ogretmen="+kursAra.getOgretmen().getId();
-		
-		System.out.println(kriter);
+
 		Session session = sessionFactory.getCurrentSession();
 		List<Kurs> resultList=session.createQuery(kriter, Kurs.class).getResultList();
 		return resultList;

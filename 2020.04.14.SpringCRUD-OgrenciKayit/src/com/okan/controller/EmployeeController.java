@@ -35,8 +35,8 @@ public class EmployeeController {
 	
 	@GetMapping("/list")
 	public String listEmployee(Model model) {
-		if(!kullaniciServisi.kullaniciVarMı())
-			return "redirect:/";
+//		if(!kullaniciServisi.kullaniciVarMı())
+//			return "redirect:/";
 		List<Employee> employeeList = employeeService.listEmployees();
 		model.addAttribute("employeeList", employeeList);
 		model.addAttribute("employeeSearch", new Employee());
@@ -65,7 +65,6 @@ public class EmployeeController {
 		if(employee.getSalary()>job.getMaxSalary()) {
 			br.rejectValue("salary", "error.emplooye", "Maximum maaştan("+job.getMaxSalary()+") yüksek olamaz!");
 			}
-		System.out.println(br);
 		if(br.hasErrors())
 			return "employee-form";
 		employeeService.saveEmployee(employee);

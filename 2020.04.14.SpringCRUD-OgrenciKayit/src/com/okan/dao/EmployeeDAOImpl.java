@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -113,7 +114,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		if(employee.getDepartment().getDepartmentid()!=null)
 			kriter+=" and department="+employee.getDepartment().getDepartmentid();
 
-		System.out.println(kriter);
+		
 		Session session = sessionFactory.getCurrentSession();
 		List<Employee> searchEmp =session.createQuery(kriter, Employee.class).getResultList();
 		

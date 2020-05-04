@@ -26,8 +26,6 @@ public class KullaniciDAOImlp implements KullaniciDAO {
 
 	@Override
 	public Kullanici kullaniciGetir() {
-	
-		System.out.println("\n"+kullanici+"\n");
 
 		return kullanici;
 	}
@@ -56,7 +54,6 @@ public class KullaniciDAOImlp implements KullaniciDAO {
 
 	@Override
 	public boolean kullaniciVarMı() {
-		System.out.println(kullanici.getRol());
 		if(kullanici.getKullaniciAdi()==null)
 			return false;
 		return true;

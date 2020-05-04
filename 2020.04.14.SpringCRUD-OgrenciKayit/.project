@@ -40,6 +40,11 @@
 			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/antlr-2.7.7.jar</locationURI>
 		</link>
 		<link>
+			<name>WebContent/WEB-INF/lib/aspectjweaver-1.9.5.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/ASPECTJ/aspectjweaver-1.9.5.jar</locationURI>
+		</link>
+		<link>
 			<name>WebContent/WEB-INF/lib/byte-buddy-1.10.7.jar</name>
 			<type>1</type>
 			<locationURI>PARENT-3-PROJECT_LOC/Okan/EclipseWorkSpace/libs/spring-mvc-hibernate%20t%C3%BCm%C3%BC/byte-buddy-1.10.7.jar</locationURI>

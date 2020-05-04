@@ -15,7 +15,9 @@ import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
+import org.springframework.stereotype.Component;
 
+@Component
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {

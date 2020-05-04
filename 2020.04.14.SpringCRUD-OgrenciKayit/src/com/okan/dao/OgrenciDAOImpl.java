@@ -82,7 +82,6 @@ public class OgrenciDAOImpl implements OgrenciDAO {
 		if(ogrenci.getOgrenciNo()!=null)
 			kriter+="and ogrenciNo="+ogrenci.getOgrenciNo();
 		
-		System.out.println(kriter);
 		Session session = sessionFactory.getCurrentSession();
 		List<Ogrenci> resultList=session.createQuery(kriter, Ogrenci.class).getResultList();
 		return resultList;

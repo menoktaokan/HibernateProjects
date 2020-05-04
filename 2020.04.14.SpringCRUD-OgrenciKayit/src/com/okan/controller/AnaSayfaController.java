@@ -31,7 +31,8 @@ public class AnaSayfaController {
 	
 	@RequestMapping("/index")
 	public String anaSayfa() {
-		
+		if(!kullaniciServisi.kullaniciVarMı())
+			return "redirect:/";
 		return "index";
 	}
 

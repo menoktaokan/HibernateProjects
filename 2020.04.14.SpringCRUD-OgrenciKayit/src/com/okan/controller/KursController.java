@@ -99,7 +99,6 @@ public class KursController {
 	public String kursAra(@ModelAttribute("kursAra") Kurs kursAra, Model model) {
 		if(!kullaniciServisi.kullaniciVarMı())
 			return "redirect:/";
-		System.out.println(kursAra.getId()+" "+kursAra.getAd()+" "+kursAra.getSaat()+" "+kursAra.getOgretmen().getId());
 		List<Kurs>  arananKurslar =kursServisi.searchKurs(kursAra);
 		model.addAttribute("kurs", arananKurslar);
 		

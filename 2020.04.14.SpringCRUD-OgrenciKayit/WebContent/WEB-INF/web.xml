@@ -16,9 +16,6 @@ id="WebApp_ID" version="4.0">
 	<display-name>spring-mvc-demo</display-name>
 
 	<absolute-ordering />
-	
-
-
 	<!-- Spring MVC Configuration -->
 
 	<!-- Step 1: Spring MVC Dispatcher Servlet Configuration -->

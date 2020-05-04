@@ -31,6 +31,7 @@ public class KullaniciServisiImpl implements KullaniciServisi {
 		return kullaniciDAO.girisYap(kullaniciAdi, sifre);
 	}
 
+	@Transactional
 	@Override
 	public boolean kullaniciVarMı() {
 		// TODO Auto-generated method stub
