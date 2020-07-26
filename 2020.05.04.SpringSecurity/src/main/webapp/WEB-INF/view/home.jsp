@@ -15,5 +15,6 @@
 		<input type="submit" value="Logout" />
 
 	</f:form>
+	<a href="/2020.04.28.SpringSecurity2/test" >test</a>
 </body>
 </html>

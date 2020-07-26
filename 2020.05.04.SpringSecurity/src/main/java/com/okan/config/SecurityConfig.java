@@ -23,12 +23,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		.withUser(users.username("fethi").password("sen").roles("PERSONEL"));
 		// TODO Auto-generated method stub
 //		super.configure(auth);
+		
+		
 	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 		.authorizeRequests()
+		.antMatchers("/").permitAll()
 		.anyRequest()
 		.authenticated(); //gelen bütün istekleri kontrol et (hepsini ele al)
 		
